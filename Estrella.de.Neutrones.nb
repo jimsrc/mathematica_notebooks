@@ -1,0 +1,314 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[      8951,        305]
+NotebookOptionsPosition[      7588,        255]
+NotebookOutlinePosition[      7931,        270]
+CellTagsIndexPosition[      7888,        267]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+Aqui pongo la FSM sin el termino de gravedad, y sin aproximaciones.\
+\>", "Text",
+ CellChangeTimes->{{3.47537481209375*^9, 3.47537483178125*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{"f", "[", 
+   RowBox[{"N", ",", "Z"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.475373706046875*^9, 3.47537370884375*^9}, {
+  3.475373848109375*^9, 3.4753738611875*^9}}],
+
+Cell[BoxData[
+ RowBox[{"15.85`", "\[InvisibleSpace]", "-", 
+  FractionBox[
+   RowBox[{"23.21`", " ", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"N", "-", "Z"}], ")"}], "2"]}], 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{"N", "+", "Z"}], ")"}], "2"]], "-", 
+  FractionBox[
+   RowBox[{"0.71`", " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", "1"}], "+", "Z"}], ")"}], " ", "Z"}], 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{"N", "+", "Z"}], ")"}], 
+    RowBox[{"4", "/", "3"}]]], "-", 
+  FractionBox["18.34`", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{"N", "+", "Z"}], ")"}], 
+    RowBox[{"1", "/", "3"}]]], "-", 
+  FractionBox[
+   RowBox[{"12", " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", "1"}], "+", 
+      RowBox[{"Mod", "[", 
+       RowBox[{"N", ",", "2"}], "]"}], "+", 
+      RowBox[{"Mod", "[", 
+       RowBox[{"Z", ",", "2"}], "]"}]}], ")"}]}], 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{"N", "+", "Z"}], ")"}], 
+    RowBox[{"5", "/", "2"}]]]}]], "Output",
+ CellChangeTimes->{{3.4753738525625*^9, 3.475373861828125*^9}}]
+}, Open  ]],
+
+Cell["\<\
+Aqui, aproximo la FSM para A=N; Z=0 con N->infinito. Ademas agrego el termino \
+de gravitatorio:\
+\>", "Text",
+ CellChangeTimes->{{3.475374838109375*^9, 3.47537489346875*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Clear", "[", "n", "]"}], ";", " ", 
+  RowBox[{
+   RowBox[{"B", "[", "n_", "]"}], "=", 
+   RowBox[{"15.85", "\[InvisibleSpace]", "-", "23.21", "+", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"3", "*", 
+       RowBox[{"G", "/", "5"}]}], ")"}], "*", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"M", "*", "n"}], ")"}], "^", "2"}], "/", "r"}], "*", 
+       RowBox[{"(", 
+        RowBox[{"n", "^", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", "4"}], "/", "3"}], ")"}]}], ")"}]}], 
+      ")"}]}]}]}]}]], "Input",
+ CellChangeTimes->{{3.475373924328125*^9, 3.475374006375*^9}, {
+  3.475374074296875*^9, 3.4753742189375*^9}, {3.4753743114375*^9, 
+  3.475374315890625*^9}, {3.47537456328125*^9, 3.4753745940625*^9}, {
+  3.475374631015625*^9, 3.4753746391875*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", "7.360000000000001`"}], "+", 
+  RowBox[{"5.83196941323346`*^-37", " ", 
+   SuperscriptBox["n", 
+    RowBox[{"2", "/", "3"}]]}]}]], "Output",
+ CellChangeTimes->{{3.47537418940625*^9, 3.4753742196875*^9}, 
+   3.475374320359375*^9, {3.47537456409375*^9, 3.475374596515625*^9}, 
+   3.475374642640625*^9}]
+}, Open  ]],
+
+Cell["\<\
+G: cte universal de gravedad; M=masa del neutron; r = distancia entre \
+neutrones.\
+\>", "Text",
+ CellChangeTimes->{{3.4753749075*^9, 3.47537492809375*^9}, {
+  3.47537499328125*^9, 3.475375017296875*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"G", "=", 
+   RowBox[{"6.7", "*", 
+    RowBox[{"10", "^", 
+     RowBox[{"(", 
+      RowBox[{"-", "11"}], ")"}]}], "*", 
+    RowBox[{"(", 
+     RowBox[{"1", "/", 
+      RowBox[{"(", 
+       RowBox[{"1.602", "*", 
+        RowBox[{"10", "^", 
+         RowBox[{"(", 
+          RowBox[{"-", "13"}], ")"}]}]}], ")"}]}], ")"}]}]}], ";", " ", 
+  RowBox[{"M", "=", 
+   RowBox[{"1.67", "*", 
+    RowBox[{"10", "^", 
+     RowBox[{"(", 
+      RowBox[{"-", "27"}], ")"}]}]}]}], ";", " ", 
+  RowBox[{"r", "=", 
+   RowBox[{"1.2", "*", 
+    RowBox[{"10", "^", 
+     RowBox[{"(", 
+      RowBox[{"-", "15"}], ")"}]}]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.47537423653125*^9, 3.475374237359375*^9}, {
+  3.475374371625*^9, 3.475374444828125*^9}, {3.475374488078125*^9, 
+  3.47537452853125*^9}}],
+
+Cell["Evaluo, pa ver si anda la funcion...", "Text",
+ CellChangeTimes->{{3.475375031765625*^9, 3.475375043703125*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"B", "[", "1", "]"}]], "Input",
+ CellChangeTimes->{{3.47537453153125*^9, 3.475374553734375*^9}, {
+  3.475374604921875*^9, 3.475374652890625*^9}}],
+
+Cell[BoxData[
+ RowBox[{"-", "7.360000000000001`"}]], "Output",
+ CellChangeTimes->{{3.475374554078125*^9, 3.475374570234375*^9}, {
+  3.47537460521875*^9, 3.4753746531875*^9}}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Clear", "[", "x", "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.475374737625*^9, 3.47537474496875*^9}}],
+
+Cell["\<\
+Encuentro para que valor de n , B es cero. Es decir el valor m\[IAcute]nimo \
+de n para q la estrella sea estable. Doy una semilla de 10^55.\
+\>", "Text",
+ CellChangeTimes->{{3.475375050859375*^9, 3.475375121421875*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FindRoot", "[", 
+  RowBox[{
+   RowBox[{"B", "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", 
+     RowBox[{"10", "^", "55"}]}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.47537465665625*^9, 3.475374658578125*^9}, {
+  3.47537471953125*^9, 3.475374756484375*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"x", "\[Rule]", "4.4832593730939834`*^55"}], "}"}]], "Output",
+ CellChangeTimes->{3.47537476465625*^9}]
+}, Open  ]],
+
+Cell["Evaluo la FSM en N=10^55 y Z=0. Da negativo.", "Text",
+ CellChangeTimes->{{3.475375286984375*^9, 3.475375322125*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"f", "[", 
+  RowBox[{
+   RowBox[{"10", "^", "55"}], ",", "0"}], "]"}]], "Input",
+ CellChangeTimes->{{3.475375133140625*^9, 3.475375175421875*^9}, {
+  3.475375266765625*^9, 3.47537527496875*^9}}],
+
+Cell[BoxData[
+ RowBox[{"-", "7.359999999999998`"}]], "Output",
+ CellChangeTimes->{3.4753753244375*^9}]
+}, Open  ]],
+
+Cell["\<\
+Ahora usando la FSM aproximada, da muy cercano a cero, como deb\[IAcute]a:\
+\>", "Text",
+ CellChangeTimes->{{3.475375337265625*^9, 3.475375347078125*^9}, {
+  3.47537541240625*^9, 3.4753754245625*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"B", "[", 
+  RowBox[{"4.4832593730939834", "*", 
+   RowBox[{"10", "^", "55"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.4753753168125*^9, 3.475375387328125*^9}, {
+  3.475375430875*^9, 3.475375435390625*^9}}],
+
+Cell[BoxData["1.7763568394002505`*^-15"], "Output",
+ CellChangeTimes->{{3.47537535978125*^9, 3.475375388078125*^9}, {
+  3.4753754318125*^9, 3.47537543596875*^9}}]
+}, Open  ]],
+
+Cell["\<\
+Si ahora evaluo con N mayor que el minimo, da un valor positivo mayor aun, \
+como deber\[IAcute]a. Es decir mientras mas neutrones, mas ligado el estado \
+de la estrella.\
+\>", "Text",
+ CellChangeTimes->{{3.475375441734375*^9, 3.475375514796875*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"B", "[", 
+  RowBox[{"10", "^", "58"}], "]"}]], "Input",
+ CellChangeTimes->{{3.47537551628125*^9, 3.475375542296875*^9}}],
+
+Cell[BoxData["263.33604106435695`"], "Output",
+ CellChangeTimes->{{3.475375518015625*^9, 3.475375542796875*^9}}]
+}, Open  ]]
+},
+WindowSize->{615, 589},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"7.0 for Microsoft Windows (32-bit) (November 10, 2008)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[545, 20, 155, 3, 29, "Text"],
+Cell[CellGroupData[{
+Cell[725, 27, 226, 5, 52, "Input"],
+Cell[954, 34, 1089, 37, 92, "Output"]
+}, Open  ]],
+Cell[2058, 74, 185, 4, 29, "Text"],
+Cell[CellGroupData[{
+Cell[2268, 82, 878, 25, 31, "Input"],
+Cell[3149, 109, 339, 8, 30, "Output"]
+}, Open  ]],
+Cell[3503, 120, 214, 5, 29, "Text"],
+Cell[3720, 127, 813, 26, 52, "Input"],
+Cell[4536, 155, 118, 1, 29, "Text"],
+Cell[CellGroupData[{
+Cell[4679, 160, 168, 3, 31, "Input"],
+Cell[4850, 165, 174, 3, 30, "Output"]
+}, Open  ]],
+Cell[5039, 171, 138, 3, 31, "Input"],
+Cell[5180, 176, 230, 4, 47, "Text"],
+Cell[CellGroupData[{
+Cell[5435, 184, 303, 8, 31, "Input"],
+Cell[5741, 194, 142, 3, 33, "Output"]
+}, Open  ]],
+Cell[5898, 200, 123, 1, 29, "Text"],
+Cell[CellGroupData[{
+Cell[6046, 205, 217, 5, 31, "Input"],
+Cell[6266, 212, 102, 2, 30, "Output"]
+}, Open  ]],
+Cell[6383, 217, 210, 4, 29, "Text"],
+Cell[CellGroupData[{
+Cell[6618, 225, 230, 5, 31, InheritFromParent],
+Cell[6851, 232, 162, 2, 30, "Output"]
+}, Open  ]],
+Cell[7028, 237, 260, 5, 47, "Text"],
+Cell[CellGroupData[{
+Cell[7313, 246, 144, 3, 31, "Input"],
+Cell[7460, 251, 112, 1, 30, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
